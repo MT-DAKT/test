@@ -2,10 +2,15 @@
 
 {% block content %}
 <h1>hello django!</h1>
+<a href="{% url 'band-create' %}">Créer un nouveau band</a>
 <p>Mes groupes préférés sont:</p>
 <u>
     {% for band in bands %}
-    <li><a href="{% url 'band-detailt' band.id%}">{{ band.name }}</a></li>
+    <li>
+        <a href="{% url 'band-detail' band.id%}">{{ band.name }}</a>
+        <a href="{% url 'band-update' band.id%}">[Editer]</a>
+        <a href="{% url 'band-delete' band.id%}">[Delete]</a>
+    </li>
     {% endfor %}
 </u>
 {% endblock %}

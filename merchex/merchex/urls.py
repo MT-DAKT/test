@@ -6,7 +6,11 @@ from listings import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bands/', views.band_list, name='band-list'),
-    path('bands/<int:id>/', views.band_detailt, name='band-detailt'),
-    path('contact/', views.contact, name='contact'),
+    path('bands/<int:id>/', views.band_detailt, name='band-detail'),
+    path('bands/add/', views.band_create, name='band-create'),
+    path('band/<int:id>/change/', views.band_update, name='band-update'),
+    path('band/<int:id>/delete/', views.band_delete, name='band-delete'),
+    path('contact-us/', views.contact, name='contact'),
+    path('contact-success/', views.contact, name='contact-success'),
     path('about-us/', views.about),
 ]
